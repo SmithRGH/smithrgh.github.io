@@ -1,16 +1,4 @@
 ---
-permalink: /non-menu-page/
-title: "Page not in menu"
-author_profile: true
-redirect_from: 
-  - "/nmp/"
-  - "/nmp.html"
+# Template sample, switched off for this site.
+published: false
 ---
-
-This is a page not in the menu. You can use markdown in this page.
-
-Heading 1
-======
-
-Heading 2
-======

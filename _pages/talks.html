@@ -1,16 +1,46 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "Conference contributions"
 permalink: /talks/
 author_profile: true
 ---
+{% include base_path %}
+{% assign talks = site.talks | sort: "date" | reverse %}
+{% assign now = site.time | date: "%Y-%m-%d" %}
 
-{% if site.talkmap_link == true %}
+<section id="upcoming-section">
+<h2 class="rs-cvhead">Upcoming</h2>
+<div id="upcoming">
+{% assign up = talks | where: "kind", "talk" | reverse %}
+{% for post in up %}{% assign d = post.date | date: "%Y-%m-%d" %}{% if d >= now %}{% include rs-cvrow.html item=post %}{% endif %}{% endfor %}
+</div>
+</section>
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<h2 class="rs-cvhead">Oral Presentations</h2>
+<div id="past-talks">
+{% for post in talks %}{% assign d = post.date | date: "%Y-%m-%d" %}{% if post.kind == "talk" and d < now %}{% include rs-cvrow.html item=post %}{% endif %}{% endfor %}
+</div>
 
-{% endif %}
+<h2 class="rs-cvhead">Presented Posters</h2>
+{% for post in talks %}{% if post.kind == "poster" %}{% include rs-cvrow.html item=post %}{% endif %}{% endfor %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+<h2 class="rs-cvhead">Workshops</h2>
+{% for post in talks %}{% if post.kind == "workshop" %}{% include rs-cvrow.html item=post %}{% endif %}{% endfor %}
+
+<script>
+  // Talks move from "Upcoming" to "Oral Presentations" once their start date has passed,
+  // without waiting for the site to be rebuilt.
+  (function () {
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var up = document.getElementById('upcoming'), past = document.getElementById('past-talks');
+    var rows = Array.prototype.slice.call(document.querySelectorAll('#upcoming .rs-cvrow, #past-talks .rs-cvrow'));
+    rows.forEach(function (r) {
+      var isPast = new Date(r.dataset.start + 'T00:00:00') < today;
+      (isPast ? past : up).appendChild(r);
+    });
+    var by = function (asc) { return function (a, b) { return asc ? (a.dataset.start > b.dataset.start ? 1 : -1) : (a.dataset.start < b.dataset.start ? 1 : -1); }; };
+    Array.prototype.slice.call(up.children).sort(by(true)).forEach(function (r) { up.appendChild(r); });     // soonest first
+    Array.prototype.slice.call(past.children).sort(by(false)).forEach(function (r) { past.appendChild(r); }); // most recent first
+    document.getElementById('upcoming-section').hidden = up.children.length === 0;
+  })();
+</script>

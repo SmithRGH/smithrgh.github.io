@@ -1,0 +1,6 @@
+{% comment %}
+  A paper icon: a heatmap canvas, drawn by assets/js/demos/thumbs.js from the paper's "thumb" setting.
+  Usage: {% include rs-icon.html paper=p class="rs-tile__thumb" %}
+{% endcomment %}
+{% assign ip = include.paper %}
+<span class="rs-icon {{ include.class }}" data-thumb="{{ ip.thumb }}"><canvas width="148" height="148"></canvas></span>

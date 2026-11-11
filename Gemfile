@@ -10,5 +10,5 @@ group :jekyll_plugins do
   gem 'jemoji'
 end
 
-gem 'kramdown', '>= 2.5'
+gem 'kramdown'
 gem 'kramdown-parser-gfm'

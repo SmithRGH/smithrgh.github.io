@@ -526,11 +526,61 @@ main.rs-home { margin-top: 0; }
 .page__content .rs-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1000px; }
 @media (min-width: 760px) { .page__content .rs-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
+/* ==========================================================================
+   Phones and tablets (below 1024px)
+   ========================================================================== */
+
 /* Keep the footer at the bottom of the window on short pages */
 body { min-height: 100vh; display: flex; flex-direction: column; }
 body > #main { width: 100%; flex: 1 0 auto; }
 .page__footer { flex-shrink: 0; margin-top: 3rem; }
 
-/* Fit each icon inside its navy frame in every browser */
+/* Fit each icon inside its navy frame in every browser (Safari sized it to the whole tile) */
 .rs-tile { position: relative; }
 .rs-tile .rs-tile__thumb { position: absolute; inset: 7px; width: auto; height: auto; aspect-ratio: auto; }
+
+@media (max-width: 1023px) {
+  /* Menu: every page in one row that swipes sideways (the theme's ☰ menu is not used).
+     The light/dark switch comes first so it is always in view. */
+  .greedy-nav > button { display: none !important; }
+  .greedy-nav .visible-links {
+    display: flex; align-items: center; gap: .1rem; overflow-x: auto; white-space: nowrap;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-right: 2.5rem;
+    -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent);
+  }
+  .greedy-nav .visible-links::-webkit-scrollbar { display: none; }
+  .greedy-nav .visible-links li { flex: 0 0 auto; }
+  .greedy-nav .visible-links a { color: var(--rs-on-navy); }
+  .greedy-nav .visible-links .masthead__menu-item--lg a { padding-right: .4rem; }
+  #theme-toggle { order: -1; }
+
+  /* Sidebar: larger photo, and the location and links listed instead of hidden behind "Follow" */
+  .author__avatar img { width: 96px; max-width: 96px; height: 96px; object-fit: cover; }
+  .author__content { vertical-align: middle; }
+  .sidebar { padding-top: 0 !important; } /* the theme adds header-height padding once the Follow button is gone */
+  .author__urls-wrapper { display: block; padding-top: 1rem; cursor: default; }
+  .author__urls-wrapper button { display: none; }
+  .author__urls { display: flex !important; flex-wrap: wrap; gap: .45rem 1.3rem; position: static; margin: 0; padding: 0; border: 0; background: none; box-shadow: none; z-index: auto; }
+  /* Blacksburg and Virginia Tech on the first line, the links on the second */
+  .author__urls::after { display: none !important; }
+  .author__urls::before { content: "" !important; display: block !important; order: 1; flex-basis: 100%; height: 0; width: auto; margin: 0; position: static; border: 0; }
+  .author__urls li { order: 2; }
+  .author__urls li.author__desktop { order: 0; }
+  .sidebar .author__urls .author__desktop { display: block; }
+  .author__urls li, .author__urls a { margin: 0; padding: 0; font-size: .9rem; }
+}
+
+/* ==========================================================================
+   Software page
+   ========================================================================== */
+.rs-sw-list { margin: 1rem 0 0; padding-left: 1.4rem; }
+.rs-sw-list > li { margin: 0 0 1.6rem; padding-left: .3rem; max-width: none; }
+.rs-sw-list__cite { margin: 0 0 .55rem; max-width: none; line-height: 1.6; }
+.rs-sw-list__badges { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0; max-width: none; font-family: var(--rs-sans); font-size: .82rem; }
+.rs-pill { display: inline-block; padding: .3em .85em; border: 1px solid var(--rs-accent); border-radius: 6px; color: var(--rs-accent); font-weight: 600; text-decoration: none !important; }
+.rs-pill:hover { background: var(--rs-accent); color: var(--rs-bg) !important; }
+.rs-badge { display: inline-flex; border-radius: 4px; overflow: hidden; font-weight: 500; line-height: 1; }
+.rs-badge span { padding: .45em .6em; color: #fff; }
+.rs-badge span:first-child { background: #4a5260; }
+.rs-badge span:last-child { background: #3c7d5a; }
+.rs-badge--license span:last-child { background: #c06a35; }

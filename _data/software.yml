@@ -1,0 +1,38 @@
+# Code and data packages shown on the Software page, newest first.
+# Fields:
+#   authors  - as on Zenodo; "R. Smith" is shown in bold automatically
+#   title    - the Zenodo title
+#   version, date (shown as written), doi (without https://doi.org/)
+#   record   - the Zenodo record number (the digits in zenodo.org/records/...), used for the BibTeX button
+#   paper    - link for the Paper button (an article page on this site, or any URL)
+#   license  - text for the license badge; leave empty for no badge
+packages:
+  - authors: "R. Smith and S. W. R. Werner"
+    title: "Code, data and results for numerical experiments in “A tangential ADI method for the efficient solution of large-scale indefinite Lyapunov equations”"
+    version: "1.1"
+    date: "April 2026"
+    doi: "10.5281/zenodo.19582087"
+    record: "19582087"
+    paper: "/publication/tangential-adi"
+    license: "BSD 2-Clause"
+
+  - authors: "R. Smith, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Qiu, J. Nakao and W. Taitano"
+    title: "Code, data and results for numerical experiments in “Efficient sketching-based summation of Tucker tensors”"
+    version: "1.0"
+    date: "March 2026"
+    doi: "10.5281/zenodo.18736760"
+    record: "18736760"
+    paper: "/publication/tucker-summation"
+    license: ""   # add the license shown on the Zenodo page
+
+# To add the Tucker-sketched GMRES package, copy its details from
+# https://doi.org/10.5281/zenodo.19074856, fill them in below, remove the # signs
+# and move the entry to the right place in the list above (newest first).
+#  - authors: "A. Bucci, M. Iannacito, M. Pasha and R. Smith"
+#    title: ""
+#    version: ""
+#    date: ""
+#    doi: "10.5281/zenodo.19074856"
+#    record: "19074856"
+#    paper: "/publication/tucker-sketched-gmres"
+#    license: ""

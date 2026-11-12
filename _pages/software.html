@@ -1,0 +1,23 @@
+---
+layout: archive
+title: "Software"
+permalink: /software/
+author_profile: true
+---
+{% include base_path %}
+<h2 class="rs-cvhead">Supplementary code packages and data</h2>
+<ol class="rs-sw-list">
+{% for s in site.data.software.packages %}
+  <li>
+    <p class="rs-sw-list__cite">{{ s.authors | replace: "R. Smith", "<strong>R. Smith</strong>" }}.
+      <a href="https://doi.org/{{ s.doi }}">{{ s.title }}{% if s.version and s.version != "" %} (version {{ s.version }}){% endif %}</a>{% if s.date and s.date != "" %}, {{ s.date }}{% endif %}.
+      doi:<a href="https://doi.org/{{ s.doi }}">{{ s.doi }}</a></p>
+    <p class="rs-sw-list__badges">
+      {% if s.record %}<a class="rs-pill" href="https://zenodo.org/records/{{ s.record }}/export/bibtex">BibTeX</a>{% endif %}
+      {% if s.paper %}<a class="rs-pill" href="{% if s.paper contains '://' %}{{ s.paper }}{% else %}{{ base_path }}{{ s.paper }}{% endif %}">Paper</a>{% endif %}
+      <span class="rs-badge"><span>Open</span><span>source</span></span>
+      {% if s.license and s.license != "" %}<span class="rs-badge rs-badge--license"><span>License</span><span>{{ s.license }}</span></span>{% endif %}
+    </p>
+  </li>
+{% endfor %}
+</ol>

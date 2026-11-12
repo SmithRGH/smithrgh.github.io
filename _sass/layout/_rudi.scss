@@ -615,3 +615,4 @@ button.rs-pill { font: inherit; font-weight: 600; background: none; cursor: poin
 .rs-lucky__body .rs-sw-list__badges { margin-top: .2rem; }
 .rs-lucky__card { grid-template-areas: "thumb body"; }
 @media (max-width: 680px) { .rs-lucky__card { grid-template-areas: "thumb" "body"; } }
+.rs-cv__intro { margin: 0 0 1.5rem; max-width: none; }

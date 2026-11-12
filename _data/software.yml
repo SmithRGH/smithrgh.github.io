@@ -8,16 +8,16 @@
 #   paper    - link for the Paper button (an article page on this site, or any URL)
 #   license  - text for the license badge; leave empty for no badge
 packages:
-  - authors: "R. Smith, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Qiu, J. Nakao and W. Taitano"
-    title: "Code, data and results for numerical experiments in “Efficient sketching-based summation of Tucker tensors”"
+  - authors: "R. Smith, M. Pasha, A. Galindo-Olarte, G. Ballard and H. Al Daas"
+    title: "Code, Data and Results for Numerical Experiments in “Efficient Sketching-Based Summation of Tucker Tensors”"
     version: "1.1"
     date: "August 2026"
     doi: "10.5281/zenodo.21753807"
     record: "21753807"
     bibtex: |
       @MISC{supSmiPGetal26,
-        author = {Smith, R. and Pasha, M. and Galindo-Olarte, A. and Al~Daas, H. and Ballard, G. and Qiu, J. and Nakao, J. and Taitano, W.},
-        title  = {Code, Data and Results for Numerical Experiments in ``Efficient sketching-based summation of {T}ucker tensors'' (version 1.1)},
+        author = {Smith, R. and Pasha, M. and Galindo-Olarte, A. and Ballard, G. and Al~Daas, H.},
+        title  = {Code, Data and Results for Numerical Experiments in ``Efficient Sketching-Based Summation of {T}ucker Tensors'' (version 1.1)},
         month  = aug,
         year   = {2026},
         doi    = {10.5281/zenodo.21753807}
@@ -25,16 +25,16 @@ packages:
     paper: "/publication/tucker-summation"
     license: "BSD 2-Clause"
 
-  - authors: "A. Bucci, M. Iannacito, M. Pasha and R. Smith"
-    title: "Code, data and results for numerical experiments in “Randomized Tucker-sketched GMRES”"
+  - authors: "R. Smith, M. Pasha, A. Bucci and M. Iannacito"
+    title: "Code, Data and Results for Numerical Experiments in “Randomized Tucker-Sketched GMRES”"
     version: "1.0"
     date: "August 2026"
     doi: "10.5281/zenodo.19074856"
     record: "19074856"
     bibtex: |
-      @MISC{supBucIPS26,
-        author = {Bucci, A. and Iannacito, M. and Pasha, M. and Smith, R.},
-        title  = {Code, Data and Results for Numerical Experiments in ``Randomized {T}ucker-sketched {GMRES}'' (version 1.0)},
+      @MISC{supSmiPBI26,
+        author = {Smith, R. and Pasha, M. and Bucci, A. and Iannacito, M.},
+        title  = {Code, Data and Results for Numerical Experiments in ``Randomized {T}ucker-Sketched {GMRES}'' (version 1.0)},
         month  = aug,
         year   = {2026},
         doi    = {10.5281/zenodo.19074856}

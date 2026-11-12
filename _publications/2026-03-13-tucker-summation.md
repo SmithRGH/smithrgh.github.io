@@ -14,7 +14,6 @@ has_demo: true
 code: 'https://doi.org/10.5281/zenodo.18736760'
 demo: /publication/tucker-summation#demo
 arxiv: 'https://arxiv.org/abs/2603.13532'
-excerpt: 'Structured randomized sketching for recompressing sums of Tucker tensors without forming the large intermediate core.'
 citation: 'R. Smith, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Nakao, J.-M. Qiu and W. Taitano. Efficient sketching-based summation of Tucker tensors. SIAM Journal on Scientific Computing (accepted), 2026. arXiv:2603.13532.'
 cv_authors: '<span class="rs-me">R. Smith</span>, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Nakao, J.-M. Qiu, and W. Taitano'
 cv_status: 'Accepted to SIAM Journal on Scientific Computing (SISC).'

@@ -525,3 +525,8 @@ main.rs-home { margin-top: 0; }
 .page__content li.rs-paper, .page__content .rs-tiles li { max-width: none; }
 .page__content .rs-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1000px; }
 @media (min-width: 760px) { .page__content .rs-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* Keep the footer at the bottom of the window on short pages */
+body { min-height: 100vh; display: flex; flex-direction: column; }
+body > #main { width: 100%; flex: 1 0 auto; }
+.page__footer { flex-shrink: 0; margin-top: 3rem; }

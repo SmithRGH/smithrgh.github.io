@@ -14,7 +14,6 @@ has_demo: true
 code: 'https://doi.org/10.5281/zenodo.19582087'
 demo: /publication/tangential-adi#demo
 arxiv: 'https://arxiv.org/abs/2512.04983'
-excerpt: 'Low-rank ADI that updates one tangential direction per step for Lyapunov equations with an indefinite, high-rank constant term.'
 citation: 'R. Smith and S. W. R. Werner. A tangential low-rank ADI method for solving indefinite Lyapunov equations. arXiv:2512.04983, 2025.'
 cv_authors: '<span class="rs-me">R. Smith</span> and S. W. R. Werner'
 cv_status: 'Submitted.'

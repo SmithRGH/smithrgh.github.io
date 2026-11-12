@@ -559,7 +559,7 @@ body > #main { width: 100%; flex: 1 0 auto; }
   #theme-toggle { order: -1; }
 
   /* Sidebar: larger photo, and the location and links listed instead of hidden behind "Follow" */
-  .author__avatar img { width: 96px; max-width: 96px; height: 96px; object-fit: cover; }
+  .author__avatar img { width: 120px; max-width: 120px; height: 120px; object-fit: cover; }
   .author__content { vertical-align: middle; }
   .sidebar { padding-top: 0 !important; } /* the theme adds header-height padding once the Follow button is gone */
   .author__urls-wrapper { display: block; padding-top: 1rem; cursor: default; }
@@ -616,3 +616,11 @@ button.rs-pill { font: inherit; font-weight: 600; background: none; cursor: poin
 .rs-lucky__card { grid-template-areas: "thumb body"; }
 @media (max-width: 680px) { .rs-lucky__card { grid-template-areas: "thumb" "body"; } }
 .rs-cv__intro { margin: 0 0 1.5rem; max-width: none; }
+
+/* Profile photo: a little smaller on the narrowest phones so the bio beside it isn't squeezed */
+@media (max-width: 359px) { .author__avatar img { width: 100px; max-width: 100px; height: 100px; } }
+
+/* Profile photo: fill the sidebar's width on computers (the theme stops at 175px) */
+@media (min-width: 1024px) {
+  .author__avatar img { width: 100%; max-width: 100%; height: auto; }
+}

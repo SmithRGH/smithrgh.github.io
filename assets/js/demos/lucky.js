@@ -47,6 +47,7 @@ if (root) {
     if (still()) { card.classList.add('is-open'); focusCard(); return; }
 
     backdrop.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, easing: 'ease-out', fill: 'both' });
+    card.style.overflow = 'visible'; /* let the icon fly in from outside the card without being cut off */
     await cardThumb.animate([
       { transform: tf(dx, dy, 0, s), offset: 0 },
       { transform: tf(dx, dy + 6, 0, s * 1.12, s * 0.84), offset: 0.12, easing: 'ease-out' },              // crouch
@@ -56,6 +57,7 @@ if (root) {
       { transform: tf(0, -6, 360, 0.98, 1.03), offset: 0.92, easing: 'ease-in-out' },                          // bounce
       { transform: tf(0, 0, 360, 1), offset: 1 },
     ], { duration: 1250, fill: 'both' }).finished;
+    card.style.overflow = '';
     cardThumb.querySelectorAll('.rs-formula').forEach(fitFormula);
     card.classList.add('is-open');
     focusCard();
@@ -65,6 +67,7 @@ if (root) {
 
   async function close() {
     if (open === null) return;
+    card.scrollTop = 0; card.style.overflow = 'visible'; /* the icon flies back outside the card */
     const tile = tiles[open], dest = thumbOf(tile).getBoundingClientRect(), now = cardThumb.getBoundingClientRect();
     const [fx, fy] = centre(dest), [tx, ty] = centre(now);
     card.classList.remove('is-open');
@@ -77,6 +80,7 @@ if (root) {
         { transform: tf(fx - tx, fy - ty, 0, dest.width / now.width) },
       ], { duration: 560, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'both' }).finished;
     }
+    card.style.overflow = '';
     tile.classList.remove('is-lifted');
     overlay.hidden = true; document.documentElement.classList.remove('rs-noscroll');
     cardThumb.getAnimations().forEach(a => a.cancel());

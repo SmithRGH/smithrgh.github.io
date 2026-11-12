@@ -634,3 +634,11 @@ button.rs-pill { font: inherit; font-weight: 600; background: none; cursor: poin
    and keep "Next" on the right */
 .pagination--pager:only-child { margin-left: 0; border-radius: 4px; }
 .pagination--pager.is-next:only-child { margin-left: 50%; }
+
+/* Menu: every link reserves the 2px underline of the current page, so selecting a page
+   no longer shifts the links up or down by a pixel */
+.masthead .greedy-nav .visible-links a { border-bottom: 2px solid transparent; }
+.masthead .greedy-nav .visible-links .masthead__menu-item.selected a { border-bottom-color: #ffffff; }
+/* "Home": bold, and the same line height as the other links (its serif font is 1.15 times
+   larger), so its text and underline sit level with theirs */
+.masthead .masthead__menu-item--lg a { font-weight: 700; line-height: 1.3043; padding-top: calc(0.5rem - 1px); padding-bottom: calc(0.5rem + 1px); }

@@ -5,7 +5,7 @@
 #   version, date (shown as written), doi (without https://doi.org/)
 #   record   - the Zenodo record number (the digits in zenodo.org/records/...)
 #   bibtex   - the citation shown by the BibTeX button (Zenodo: Export -> BibTeX), indented under "bibtex: |"
-#   paper    - link for the Paper button (an article page on this site, or any URL)
+#   preprint - link for the Preprint button (the arXiv page of the paper)
 #   license  - text for the license badge; leave empty for no badge
 packages:
   - authors: "R. Smith, M. Pasha, A. Galindo-Olarte, G. Ballard and H. Al Daas"
@@ -22,7 +22,7 @@ packages:
         year   = {2026},
         doi    = {10.5281/zenodo.21753807}
       }
-    paper: "/publication/tucker-summation"
+    preprint: "https://arxiv.org/abs/2603.13532"
     license: "BSD 2-Clause"
 
   - authors: "R. Smith, M. Pasha, A. Bucci and M. Iannacito"
@@ -39,7 +39,7 @@ packages:
         year   = {2026},
         doi    = {10.5281/zenodo.19074856}
       }
-    paper: "/publication/tucker-sketched-gmres"
+    preprint: "https://arxiv.org/abs/2608.11091"
     license: "BSD 2-Clause"
 
   - authors: "R. Smith and S. W. R. Werner"
@@ -56,5 +56,5 @@ packages:
         year   = {2026},
         doi    = {10.5281/zenodo.19582087}
       }
-    paper: "/publication/tangential-adi"
+    preprint: "https://arxiv.org/abs/2512.04983"
     license: "BSD 2-Clause"

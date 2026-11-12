@@ -14,7 +14,7 @@ author_profile: true
       doi:<a href="https://doi.org/{{ s.doi }}">{{ s.doi }}</a></p>
     <div class="rs-sw-list__badges">
       {% if s.bibtex %}<button type="button" class="rs-pill" data-bibtex>BibTeX</button><pre class="rs-bib" hidden>{{ s.bibtex | escape }}</pre>{% endif %}
-      {% if s.paper %}<a class="rs-pill" href="{% if s.paper contains '://' %}{{ s.paper }}{% else %}{{ base_path }}{{ s.paper }}{% endif %}">Paper</a>{% endif %}
+      {% if s.preprint %}<a class="rs-pill" href="{{ s.preprint }}">Preprint</a>{% endif %}
       <span class="rs-badge"><span>Open</span><span>source</span></span>
       {% if s.license and s.license != "" %}<span class="rs-badge rs-badge--license"><span>License</span><span>{{ s.license }}</span></span>{% endif %}
     </div>

@@ -51,7 +51,7 @@ Everything below the second `---` is the article page.
 - `title`, `version`, `date` and `doi` (without `https://doi.org/`).
 - `record` is the number in the Zenodo address.
 - `bibtex` is the citation in the **BibTeX** pop-up (Zenodo: **Export → BibTeX**), indented under `bibtex: |`.
-- `paper` is the article page on this site, or any web address.
+- `preprint` is the arXiv page of the paper (the **Preprint** button).
 - `license` is shown as a badge. Leave it empty for no badge.
 
 List one entry per package. When you release a new version, update that entry's `version`, `date`, `doi`, `record` and `bibtex` rather than adding a second one.

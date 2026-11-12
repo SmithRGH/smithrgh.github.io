@@ -17,6 +17,7 @@ arxiv: 'https://arxiv.org/abs/2603.13532'
 citation: 'R. Smith, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Nakao, J.-M. Qiu and W. Taitano. Efficient sketching-based summation of Tucker tensors. SIAM Journal on Scientific Computing (accepted), 2026. arXiv:2603.13532.'
 cv_authors: '<span class="rs-me">R. Smith</span>, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Nakao, J.-M. Qiu, and W. Taitano'
 cv_status: 'Accepted to SIAM Journal on Scientific Computing (SISC).'
+excerpt: 'Structured randomized sketching for recompressing sums of Tucker tensors without forming the large intermediate core.'  # used for link previews and search results
 ---
 {% include base_path %}
 Many solvers for high-dimensional problems keep their iterates as tensors in Tucker format and repeatedly add them together. Each sum increases the multilinear ranks, so the result has to be recompressed. The standard approach first forms the block-diagonal core of the sum, which grows like $$(sr)^3$$ for $$s$$ terms of rank $$r$$ and can become larger than the memory available. This paper develops randomized sketching algorithms that exploit the Kronecker and Khatri–Rao structure of the sketches. They operate directly on the factor matrices and small cores of the individual terms, and use an effective-rank estimate to heuristically choose the sketch sizes. 

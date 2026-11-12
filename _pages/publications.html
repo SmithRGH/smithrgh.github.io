@@ -18,8 +18,10 @@ author_profile: true
       {% unless title_shown %}
         <h2>{{ category[1].title }}</h2><hr />
         {% assign title_shown = true %}
+        {% assign num = 0 %}
       {% endunless %}
-      {% include archive-single.html %}
+      {% assign num = num | plus: 1 %}
+      {% include archive-single.html num=num %}
     {% endfor %}
   {% endfor %}
 {% else %}

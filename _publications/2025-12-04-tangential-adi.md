@@ -17,6 +17,7 @@ arxiv: 'https://arxiv.org/abs/2512.04983'
 citation: 'R. Smith and S. W. R. Werner. A tangential low-rank ADI method for solving indefinite Lyapunov equations. arXiv:2512.04983, 2025.'
 cv_authors: '<span class="rs-me">R. Smith</span> and S. W. R. Werner'
 cv_status: 'Submitted.'
+excerpt: 'Low-rank ADI that updates one tangential direction per step for Lyapunov equations with an indefinite, high-rank constant term.'  # used for link previews and search results
 ---
 {% include base_path %}
 Lyapunov equations $$AX + XA^{\mathsf H} + BRB^{\mathsf H} = 0$$ show up throughout model order reduction and control. When $$A$$ is large and sparse, the solution is stored in low-rank form $$X \approx LDL^{\mathsf H}$$, and the alternating direction implicit (ADI) method builds the factor $$L$$ step by step.

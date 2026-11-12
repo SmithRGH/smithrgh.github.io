@@ -16,6 +16,7 @@ arxiv: 'https://arxiv.org/abs/2604.01757'
 citation: 'M. F. Serret, A. Cortinovis, Y. Dong, D. Halikias, A. Ma, F. Matti, D. Needell, K. J. Pearce, E. Rebrova, D. Shur, R. Smith, H.-X. Wang and L. Grigori. Attention mechanisms through the lens of numerical methods: Approximation methods and alternative formulations. arXiv:2604.01757, 2026.'
 cv_authors: 'M. F. Serret, A. Cortinovis, Y. Dong, D. Halikias, A. Ma, F. Matti, D. Needell, K. J. Pearce, E. Rebrova, D. Shur, <span class="rs-me">R. Smith</span>, H.-X. Wang, and L. Grigori'
 cv_status: 'Submitted.'
+excerpt: 'A numerical-analysis survey of fast attention approximations and alternative formulations.'  # used for link previews and search results
 ---
 {% include base_path %}
 The attention mechanism in transformers forms an $$n \times n$$ matrix $$\operatorname{softmax}(QK^{\mathsf{T}}/\sqrt{d})$$, so its cost grows quadratically with sequence length. This is a central bottleneck for long-context inference. The survey classifies existing fast attention methods by the numerical principle they rely on:

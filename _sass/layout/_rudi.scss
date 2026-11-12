@@ -588,3 +588,11 @@ body > #main { width: 100%; flex: 1 0 auto; }
 .rs-badge span:first-child { background: #4a5260; }
 .rs-badge span:last-child { background: #3c7d5a; }
 .rs-badge--license span:last-child { background: #c06a35; }
+
+/* Publications page: number the papers within each section */
+.archive__item-title .rs-pubnum { color: var(--rs-muted); font-weight: 600; margin-right: .45em; font-variant-numeric: tabular-nums; }
+.list__item .archive__item { padding: 0 0 .2rem; }
+.list__item .archive__item-title { margin: 1.5rem 0 .3rem; }
+.list__item .archive__item p { margin: 0 0 .3rem; }
+.archive h2 + hr { margin: .2rem 0 .2rem; }
+.archive > h2 { margin-top: 2.2rem; }

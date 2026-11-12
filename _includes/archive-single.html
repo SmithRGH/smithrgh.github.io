@@ -44,12 +44,12 @@
         {% elsif post.collection == 'publications' %}
           {% if post.authors %}<p class="rs-paper__authors">{{ post.authors }}</p>{% endif %}
           <p>{% if post.status %}{{ post.status }}. {% endif %}{{ post.arxiv_id | default: post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}.</p>
-          <p class="rs-sw-list__badges">
-            {% if post.bibtex %}<button type="button" class="rs-pill" data-bibtex>BibTeX</button><template class="rs-bib">{{ post.bibtex | escape }}</template>{% endif %}
+          <div class="rs-sw-list__badges">
+            {% if post.bibtex %}<button type="button" class="rs-pill" data-bibtex>BibTeX</button><pre class="rs-bib" hidden>{{ post.bibtex | escape }}</pre>{% endif %}
             {% if post.arxiv %}<a class="rs-pill" href="{{ post.arxiv }}">Preprint</a>{% endif %}
             {% if post.code %}<a class="rs-pill" href="{{ post.code }}">Code, Data &amp; Results</a>{% endif %}
             {% if post.has_demo %}<a class="rs-pill" href="{{ base_path }}{{ post.demo }}">Interactive demo</a>{% endif %}
-          </p>
+          </div>
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}

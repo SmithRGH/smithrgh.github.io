@@ -609,3 +609,5 @@ button.rs-pill { font: inherit; font-weight: 600; background: none; cursor: poin
 .rs-bibmodal__close:hover { color: var(--rs-ink); }
 .rs-bibmodal .rs-bibmodal__copy { font-family: var(--rs-sans); font-size: .82rem; }
 @media (max-width: 600px) { .rs-bibmodal__box { padding: 2.2rem 1.1rem 1.1rem; } .rs-bibmodal__text { font-size: .72rem; } }
+.rs-papers--index .rs-sw-list__badges { margin-top: .9rem; }
+.rs-bib { display: none !important; }

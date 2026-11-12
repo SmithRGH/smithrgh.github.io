@@ -28,8 +28,8 @@ author_profile: true
 {% for post in talks %}{% if post.kind == "workshop" %}{% include rs-cvrow.html item=post %}{% endif %}{% endfor %}
 
 <script>
-  // Talks move from "Upcoming" to "Oral Presentations" once their start date has passed,
-  // without waiting for the site to be rebuilt.
+  /* Talks move from "Upcoming" to "Oral Presentations" once their start date has passed,
+     without waiting for the site to be rebuilt. */
   (function () {
     var today = new Date(); today.setHours(0, 0, 0, 0);
     var up = document.getElementById('upcoming'), past = document.getElementById('past-talks');
@@ -39,8 +39,8 @@ author_profile: true
       (isPast ? past : up).appendChild(r);
     });
     var by = function (asc) { return function (a, b) { return asc ? (a.dataset.start > b.dataset.start ? 1 : -1) : (a.dataset.start < b.dataset.start ? 1 : -1); }; };
-    Array.prototype.slice.call(up.children).sort(by(true)).forEach(function (r) { up.appendChild(r); });     // soonest first
-    Array.prototype.slice.call(past.children).sort(by(false)).forEach(function (r) { past.appendChild(r); }); // most recent first
+    Array.prototype.slice.call(up.children).sort(by(true)).forEach(function (r) { up.appendChild(r); });     /* soonest first */
+    Array.prototype.slice.call(past.children).sort(by(false)).forEach(function (r) { past.appendChild(r); }); /* most recent first */
     document.getElementById('upcoming-section').hidden = up.children.length === 0;
   })();
 </script>

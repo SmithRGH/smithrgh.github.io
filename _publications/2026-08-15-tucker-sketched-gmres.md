@@ -7,6 +7,7 @@ date: 2026-08-15
 venue: 'arXiv:2608.11091'
 status: 'Preprint'
 arxiv_id: 'arXiv:2608.11091'
+doi: '10.48550/arXiv.2608.11091'  # the arXiv DOI; change to the journal DOI once published
 authors: 'Alberto Bucci, Martina Iannacito, Mirjeta Pasha and <span class="rs-me">Rudi Smith</span>'
 summary: 'GMRES for linear systems whose unknowns are tensors in Tucker format. Sketching with short recurrences replaces full Arnoldi orthogonalization, which keeps the ranks of the Krylov basis under control. The low-rank constraint also acts as a regularizer for image deblurring.'
 thumb: gmres

@@ -7,6 +7,7 @@ date: 2025-12-04
 venue: 'arXiv:2512.04983'
 status: 'Submitted'
 arxiv_id: 'arXiv:2512.04983'
+doi: '10.48550/arXiv.2512.04983'  # the arXiv DOI; change to the journal DOI once published
 authors: '<span class="rs-me">Rudi Smith</span> and Steffen W. R. Werner'
 summary: 'Large Lyapunov equations whose constant term has high rank and an indefinite middle factor. Instead of solving with every column at every step, the method solves with one well-chosen direction, so the stored solution factor has some rank control.'
 thumb: adi

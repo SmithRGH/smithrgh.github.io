@@ -43,7 +43,7 @@
           <p>{{ post.type }}, <i>{{ post.venue }}</i>, {% if post.dates %}{{ post.dates }}{% else %}{{ post.date | default: "1900-01-01" | date: "%Y" }}{% endif %}</p>
         {% elsif post.collection == 'publications' %}
           {% if post.authors %}<p class="rs-paper__authors">{{ post.authors }}</p>{% endif %}
-          <p>{% if post.status %}{{ post.status }}. {% endif %}{{ post.arxiv_id | default: post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}.</p>
+          <p>{% if post.status %}{{ post.status }}. {% endif %}{{ post.arxiv_id | default: post.venue }}{% if post.doi %}, doi:<a href="https://doi.org/{{ post.doi }}">{{ post.doi }}</a>{% endif %}, {{ post.date | default: "1900-01-01" | date: "%Y" }}.</p>
           <div class="rs-sw-list__badges">
             {% if post.bibtex %}<button type="button" class="rs-pill" data-bibtex>BibTeX</button><pre class="rs-bib" hidden>{{ post.bibtex | escape }}</pre>{% endif %}
             {% if post.arxiv %}<a class="rs-pill" href="{{ post.arxiv }}">Preprint</a>{% endif %}

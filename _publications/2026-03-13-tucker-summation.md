@@ -7,6 +7,7 @@ date: 2026-03-13
 venue: 'SIAM Journal on Scientific Computing'
 status: 'Accepted to SIAM Journal on Scientific Computing'
 arxiv_id: 'arXiv:2603.13532'
+doi: '10.48550/arXiv.2603.13532'  # the arXiv DOI; change to the journal DOI once published
 authors: '<span class="rs-me">Rudi Smith</span>, Mirjeta Pasha, Andrés Galindo-Olarte, Hussam Al Daas, Grey Ballard, Joseph Nakao, Jing-Mei Qiu and William Taitano'
 summary: 'Adding tensors in Tucker format makes the ranks pile up, and standard rounding has to form a large dense core that may not fit in memory. Randomized sketches using Kronecker and Khatri–Rao structure work on the factors directly and never build that core.'
 thumb: tucker

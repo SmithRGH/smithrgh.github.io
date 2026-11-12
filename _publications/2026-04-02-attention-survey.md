@@ -7,6 +7,7 @@ date: 2026-04-02
 venue: 'arXiv:2604.01757'
 status: 'Submitted'
 arxiv_id: 'arXiv:2604.01757'
+doi: '10.48550/arXiv.2604.01757'  # the arXiv DOI; change to the journal DOI once published
 authors: 'Michel Fabrice Serret, Alice Cortinovis, Yijun Dong, Diana Halikias, Anna Ma, Fabio Matti, Deanna Needell, Katherine J. Pearce, Elizaveta Rebrova, Disha Shur, <span class="rs-me">Rudi Smith</span>, Hai-Xiao Wang and Laura Grigori'
 summary: 'A survey of fast approximations to transformer attention, sorted by the numerical idea behind them: sparsity and clustering, low-rank projection, randomized sketching and tensor decompositions, together with kernel reformulations and variants such as latent attention.'
 thumb: attention

@@ -91,8 +91,11 @@ export function lineChart(canvas, series, opt) {
     const y = Y(v); ctx.strokeStyle = C.rule; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(W - pad.r, y); ctx.stroke();
     ctx.fillStyle = C.muted; ctx.textAlign = 'right'; ctx.fillText(lin ? String(v) : `1e${Math.round(Math.log10(v))}`, pad.l - 8, y);
   }
-  // x ticks
-  const step = niceStep(xmax / 5);
+  // x ticks: as many as fit without the numbers touching (fewer on narrow phone screens)
+  const labelW = ctx.measureText(String(Math.round(xmax))).width + 14;
+  const fit = Math.max(1, Math.floor((W - pad.l - pad.r) / labelW));
+  let step = niceStep(xmax / Math.min(5, fit));
+  while (step > 0 && xmax / step > fit) step = niceStep(step * 1.6);
   ctx.textAlign = 'center'; ctx.textBaseline = 'top';
   for (let x = 0; x <= xmax; x += step) { ctx.fillStyle = C.muted; ctx.fillText(String(x), X(x), H - pad.b + 8); }
   ctx.fillText(opt.xlabel, pad.l + (W - pad.l - pad.r) / 2, H - 16);

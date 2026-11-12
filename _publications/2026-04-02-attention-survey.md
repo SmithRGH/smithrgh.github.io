@@ -13,7 +13,6 @@ thumb: attention
 has_demo: false
 demo: /publication/attention-numerical-methods
 arxiv: 'https://arxiv.org/abs/2604.01757'
-excerpt: 'A numerical-analysis survey of fast attention approximations and alternative formulations.'
 citation: 'M. F. Serret, A. Cortinovis, Y. Dong, D. Halikias, A. Ma, F. Matti, D. Needell, K. J. Pearce, E. Rebrova, D. Shur, R. Smith, H.-X. Wang and L. Grigori. Attention mechanisms through the lens of numerical methods: Approximation methods and alternative formulations. arXiv:2604.01757, 2026.'
 cv_authors: 'M. F. Serret, A. Cortinovis, Y. Dong, D. Halikias, A. Ma, F. Matti, D. Needell, K. J. Pearce, E. Rebrova, D. Shur, <span class="rs-me">R. Smith</span>, H.-X. Wang, and L. Grigori'
 cv_status: 'Submitted.'

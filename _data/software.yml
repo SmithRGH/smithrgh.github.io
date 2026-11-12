@@ -33,12 +33,3 @@ packages:
     record: "19582087"
     paper: "/publication/tangential-adi"
     license: "BSD 2-Clause"
-
-  - authors: "R. Smith, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Qiu, J. Nakao and W. Taitano"
-    title: "Code, data and results for numerical experiments in “Efficient sketching-based summation of Tucker tensors”"
-    version: "1.0"
-    date: "March 2026"
-    doi: "10.5281/zenodo.18736760"
-    record: "18736760"
-    paper: "/publication/tucker-summation"
-    license: "BSD 2-Clause"

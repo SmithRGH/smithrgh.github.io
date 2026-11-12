@@ -79,7 +79,6 @@ h1, h2, h3, h4 { font-family: var(--rs-serif); font-weight: 600; letter-spacing:
 .masthead { background: var(--rs-bg); border-bottom: 1px solid var(--rs-rule); }
 .greedy-nav { background: var(--rs-bg); }
 .greedy-nav .visible-links a { font-weight: 500; }
-.masthead__menu-item--lg a { font-family: var(--rs-serif); font-weight: 600; font-size: 1.15em; letter-spacing: -0.01em; }
 .author__name { font-family: var(--rs-serif); font-weight: 600; }
 .author__avatar img { border-radius: 6px; }
 .page__footer { border-top: 1px solid var(--rs-rule); }
@@ -555,8 +554,7 @@ body > #main { width: 100%; flex: 1 0 auto; }
   }
   .greedy-nav .visible-links li { flex: 0 0 auto; }
   .greedy-nav .visible-links a { color: var(--rs-on-navy); }
-  .greedy-nav .visible-links .masthead__menu-item--lg a { padding-right: .4rem; }
-  #theme-toggle { order: -1; margin-right: .9rem; }
+  #theme-toggle { order: -1; margin-right: 2rem; } /* the same visible gap as between the page links */
 
   /* Sidebar: larger photo, and the location and links listed instead of hidden behind "Follow" */
   .author__avatar img { width: 120px; max-width: 120px; height: 120px; object-fit: cover; }
@@ -639,6 +637,8 @@ button.rs-pill { font: inherit; font-weight: 600; background: none; cursor: poin
    no longer shifts the links up or down by a pixel */
 .masthead .greedy-nav .visible-links a { border-bottom: 2px solid transparent; }
 .masthead .greedy-nav .visible-links .masthead__menu-item.selected a { border-bottom-color: #ffffff; }
-/* "Home": bold, and the same line height as the other links (its serif font is 1.15 times
-   larger), so its text and underline sit level with theirs */
-.masthead .masthead__menu-item--lg a { font-weight: 700; line-height: 1.3043; padding-top: calc(0.5rem - 1px); padding-bottom: calc(0.5rem + 1px); }
+/* "Home": the same font, size, weight and spacing as the other menu links
+   (the theme otherwise makes the first item serif, larger and bold) */
+.masthead .masthead__menu-item--lg { padding-right: 0; }
+.masthead .greedy-nav .visible-links li:first-child { font-weight: normal; }
+.masthead .masthead__menu-item--lg a { font-family: var(--rs-sans); font-weight: 500; font-size: 1em; letter-spacing: normal; }

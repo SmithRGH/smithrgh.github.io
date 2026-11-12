@@ -152,6 +152,7 @@ Twitter username (site.twitter.username), matching upstream behavior.
 {% endif %}
 {% if seo_image_abs %}
   <meta property="og:image" content="{{ seo_image_abs }}">
+  {% unless site.twitter.username %}<meta name="twitter:card" content="summary_large_image">{% endunless %}
   {% if seo_image_abs contains "og-image.png" %}
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">

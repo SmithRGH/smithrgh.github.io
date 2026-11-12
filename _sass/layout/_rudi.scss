@@ -539,16 +539,20 @@ body > #main { width: 100%; flex: 1 0 auto; }
 .rs-tile { position: relative; }
 .rs-tile .rs-tile__thumb { position: absolute; inset: 7px; width: auto; height: auto; aspect-ratio: auto; }
 
+/* Menu: every page stays in one row that swipes sideways when it doesn't fit
+   (the theme's ☰ menu is not used, at any screen width). */
+.greedy-nav > button { display: none !important; }
+.greedy-nav .visible-links { overflow-x: auto; scrollbar-width: none; }
+.greedy-nav .visible-links::-webkit-scrollbar { display: none; }
+
 @media (max-width: 1023px) {
-  /* Menu: every page in one row that swipes sideways (the theme's ☰ menu is not used).
-     The light/dark switch comes first so it is always in view. */
-  .greedy-nav > button { display: none !important; }
+  /* On phones and tablets the light/dark switch comes first so it is always in view,
+     and the right edge fades to show there is more to swipe. */
   .greedy-nav .visible-links {
-    display: flex; align-items: center; gap: .1rem; overflow-x: auto; white-space: nowrap;
-    scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-right: 2.5rem;
+    display: flex; align-items: center; gap: .1rem; white-space: nowrap;
+    -webkit-overflow-scrolling: touch; padding-right: 2.5rem;
     -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent); mask-image: linear-gradient(90deg, #000 82%, transparent);
   }
-  .greedy-nav .visible-links::-webkit-scrollbar { display: none; }
   .greedy-nav .visible-links li { flex: 0 0 auto; }
   .greedy-nav .visible-links a { color: var(--rs-on-navy); }
   .greedy-nav .visible-links .masthead__menu-item--lg a { padding-right: .4rem; }

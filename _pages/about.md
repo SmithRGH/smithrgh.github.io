@@ -32,11 +32,12 @@ redirect_from:
         <p class="rs-card__authors">{{ p.authors }}</p> 
         {% if p.status %}<p class="rs-status{% if p.category == 'journal' %} is-accepted{% endif %}">{{ p.status }}</p>{% endif %} 
         <p class="rs-card__summary">{{ p.summary }}</p> 
-        <p class="rs-card__links"> 
-          <a class="rs-btn rs-btn--primary" href="{{ base_path }}{{ p.url }}">{% if p.has_demo %}Read the article and try the demo{% else %}Read the article{% endif %}</a> 
-          <a href="{{ p.arxiv }}">arXiv</a> 
-          {% if p.code %}<a href="{{ p.code }}">Code</a>{% endif %} 
-        </p> 
+        <div class="rs-sw-list__badges">
+          <a class="rs-pill" href="{{ base_path }}{{ p.url }}">Read more</a>
+          {% if p.bibtex %}<button type="button" class="rs-pill" data-bibtex>BibTeX</button><pre class="rs-bib" hidden>{{ p.bibtex | escape }}</pre>{% endif %}
+          {% if p.arxiv %}<a class="rs-pill" href="{{ p.arxiv }}">Preprint</a>{% endif %}
+          {% if p.code %}<a class="rs-pill" href="{{ p.code }}">Code, Data &amp; Results</a>{% endif %}
+        </div>
       </div> 
     </li> 
   {% endfor %} 
@@ -47,10 +48,6 @@ redirect_from:
     <div class="rs-lucky__card" role="dialog" aria-modal="true" aria-labelledby="lucky-title"> 
       <div class="rs-lucky__thumb"><canvas></canvas></div> 
       <div class="rs-lucky__body"></div> 
-      <div class="rs-lucky__actions"> 
-        <button type="button" class="rs-btn" data-lucky-again><i class="fas fa-dice-five" aria-hidden="true"></i> Another random paper</button> 
-        <button type="button" class="rs-btn" data-lucky-close aria-label="Close">Close</button> 
-      </div> 
     </div> 
   </div> 
 </section>
@@ -64,3 +61,4 @@ redirect_from:
 
 <script type="module" src="{{ base_path }}/assets/js/demos/thumbs.js"></script>
 <script type="module" src="{{ base_path }}/assets/js/demos/lucky.js"></script>
+{% include rs-bibtex.html %}

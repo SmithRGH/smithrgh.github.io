@@ -60,7 +60,8 @@ if (root) {
     card.classList.add('is-open');
     focusCard();
   }
-  function focusCard() { const a = body.querySelector('a'); (a || card).focus({ preventScroll: true }); }
+  card.tabIndex = -1;
+  function focusCard() { card.focus({ preventScroll: true }); }
 
   async function close() {
     if (open === null) return;
@@ -87,7 +88,6 @@ if (root) {
   function randomPick() { let p; do { p = Math.floor(Math.random() * tiles.length); } while (tiles.length > 1 && p === last); return p; }
 
   goBtn.addEventListener('click', () => run(async () => { if (open !== null) await close(); await show(randomPick()); }));
-  overlay.querySelector('[data-lucky-again]').addEventListener('click', () => run(async () => { await close(); await show(randomPick()); }));
   overlay.querySelectorAll('[data-lucky-close]').forEach(el => el.addEventListener('click', () => run(close)));
   tiles.forEach((t, i) => t.addEventListener('click', () => run(() => show(i))));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && open !== null) run(close); });

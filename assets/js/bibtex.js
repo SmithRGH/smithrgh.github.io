@@ -26,7 +26,7 @@
     }
     if (e.target.closest('[data-bibclose]')) close();
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) { e.stopImmediatePropagation(); close(); } });
   copy.addEventListener('click', function () {
     function done() { copy.textContent = 'Copied'; }
     if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text.textContent).then(done, function () {}); return; }

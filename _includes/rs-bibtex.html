@@ -1,0 +1,41 @@
+{% comment %}
+  Pop-up for the BibTeX buttons on the Publications and Software pages.
+  A button with data-bibtex shows the text of the <template class="rs-bib"> next to it.
+{% endcomment %}
+<div class="rs-bibmodal" data-bibmodal hidden>
+  <div class="rs-bibmodal__backdrop" data-bibclose></div>
+  <div class="rs-bibmodal__box" role="dialog" aria-modal="true" aria-label="BibTeX citation">
+    <button type="button" class="rs-bibmodal__close" data-bibclose aria-label="Close">&times;</button>
+    <pre class="rs-bibmodal__text" data-bibtext></pre>
+    <button type="button" class="rs-pill rs-bibmodal__copy" data-bibcopy>Copy</button>
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.querySelector('[data-bibmodal]');
+  if (!modal) return;
+  document.body.appendChild(modal); // above the site header, not inside the page column
+  var text = modal.querySelector('[data-bibtext]'), copy = modal.querySelector('[data-bibcopy]'), opener = null;
+  function close() { modal.hidden = true; document.documentElement.classList.remove('rs-noscroll'); if (opener) opener.focus(); }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-bibtex]');
+    if (b) {
+      var t = b.parentElement.querySelector('template.rs-bib');
+      if (!t) return;
+      e.preventDefault(); opener = b;
+      text.textContent = t.content.textContent.trim();
+      copy.textContent = 'Copy';
+      modal.hidden = false; document.documentElement.classList.add('rs-noscroll');
+      modal.querySelector('.rs-bibmodal__close').focus();
+      return;
+    }
+    if (e.target.closest('[data-bibclose]')) close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+  copy.addEventListener('click', function () {
+    var done = function () { copy.textContent = 'Copied'; };
+    if (navigator.clipboard) navigator.clipboard.writeText(text.textContent).then(done, function () {});
+    else { var r = document.createRange(); r.selectNodeContents(text); var s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy'); done(); }
+  });
+})();
+</script>

@@ -11,13 +11,24 @@ authors: '<span class="rs-me">Rudi Smith</span>, Mirjeta Pasha, Andrés Galindo-
 summary: 'Adding tensors in Tucker format makes the ranks pile up, and standard rounding has to form a large dense core that may not fit in memory. Randomized sketches using Kronecker and Khatri–Rao structure work on the factors directly and never build that core.'
 thumb: tucker
 has_demo: true
-code: 'https://doi.org/10.5281/zenodo.18736760'
+code: 'https://doi.org/10.5281/zenodo.21753807'
 demo: /publication/tucker-summation#demo
 arxiv: 'https://arxiv.org/abs/2603.13532'
 citation: 'R. Smith, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Nakao, J.-M. Qiu and W. Taitano. Efficient sketching-based summation of Tucker tensors. SIAM Journal on Scientific Computing (accepted), 2026. arXiv:2603.13532.'
 cv_authors: '<span class="rs-me">R. Smith</span>, M. Pasha, A. Galindo-Olarte, H. Al Daas, G. Ballard, J. Nakao, J.-M. Qiu, and W. Taitano'
 cv_status: 'Accepted to SIAM Journal on Scientific Computing (SISC).'
 excerpt: 'Structured randomized sketching for recompressing sums of Tucker tensors without forming the large intermediate core.'  # used for link previews and search results
+bibtex: |  # shown by the BibTeX button on the Publications page
+  @MISC{SmiPGetal26,
+    author        = {Smith, R. and Pasha, M. and Galindo-Olarte, A. and Al~Daas, H. and Ballard, G. and Nakao, J. and Qiu, J.-M. and Taitano, W.},
+    title         = {Efficient sketching-based summation of {T}ucker tensors},
+    note          = {Accepted to SIAM Journal on Scientific Computing},
+    month         = mar,
+    year          = {2026},
+    eprint        = {2603.13532},
+    archivePrefix = {arXiv},
+    doi           = {10.48550/arXiv.2603.13532}
+  }
 ---
 {% include base_path %}
 Many solvers for high-dimensional problems keep their iterates as tensors in Tucker format and repeatedly add them together. Each sum increases the multilinear ranks, so the result has to be recompressed. The standard approach first forms the block-diagonal core of the sum, which grows like $$(sr)^3$$ for $$s$$ terms of rank $$r$$ and can become larger than the memory available. This paper develops randomized sketching algorithms that exploit the Kronecker and Khatri–Rao structure of the sketches. They operate directly on the factor matrices and small cores of the individual terms, and use an effective-rank estimate to heuristically choose the sketch sizes. 
@@ -77,6 +88,6 @@ This is a simplified JavaScript version written for this site. It uses the paper
 
 ## Code and data
 
-The MATLAB code, data and results for the paper's experiments are on [Zenodo](https://doi.org/10.5281/zenodo.18736760). The algorithms, analysis and full experiments are in the [paper on arXiv](https://arxiv.org/abs/2603.13532).
+The MATLAB code, data and results for the paper's experiments are on [Zenodo](https://doi.org/10.5281/zenodo.21753807). The algorithms, analysis and full experiments are in the [paper on arXiv](https://arxiv.org/abs/2603.13532).
 
 <script type="module" src="{{ base_path }}/assets/js/demos/tucker-demo.js"></script>

@@ -18,6 +18,16 @@ citation: 'A. Bucci, M. Iannacito, M. Pasha and R. Smith. Randomized Tucker-sket
 cv_authors: 'A. Bucci, M. Iannacito, M. Pasha, and <span class="rs-me">R. Smith</span>'
 cv_status: 'Preprint.'
 excerpt: 'Sketched GMRES variants with short recurrences for tensor-structured linear systems in Tucker format.'  # used for link previews and search results
+bibtex: |  # shown by the BibTeX button on the Publications page
+  @MISC{BucIPS26,
+    author        = {Bucci, A. and Iannacito, M. and Pasha, M. and Smith, R.},
+    title         = {Randomized {T}ucker-sketched {GMRES}},
+    month         = aug,
+    year          = {2026},
+    eprint        = {2608.11091},
+    archivePrefix = {arXiv},
+    doi           = {10.48550/arXiv.2608.11091}
+  }
 ---
 {% include base_path %}
 For large linear systems whose solution is a tensor in Tucker format, standard GMRES runs into a familiar problem: every new Krylov basis vector has higher rank than the last, so tensor operations become more expensive and memory use grows with each iteration. Every new Krylov vector is a sum of earlier ones, the same rank growth seen in [summing Tucker tensors](/publication/tucker-summation), and full Arnoldi orthogonalization makes these sums longer at every step.

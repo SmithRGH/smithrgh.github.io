@@ -14,7 +14,6 @@ has_demo: true
 code: 'https://doi.org/10.5281/zenodo.19074856'
 demo: /publication/tucker-sketched-gmres#demo
 arxiv: 'https://arxiv.org/abs/2608.11091'
-excerpt: 'Sketched GMRES variants with short recurrences for tensor-structured linear systems in Tucker format.'
 citation: 'A. Bucci, M. Iannacito, M. Pasha and R. Smith. Randomized Tucker-sketched GMRES. arXiv:2608.11091, 2026.'
 cv_authors: 'A. Bucci, M. Iannacito, M. Pasha, and <span class="rs-me">R. Smith</span>'
 cv_status: 'Preprint.'

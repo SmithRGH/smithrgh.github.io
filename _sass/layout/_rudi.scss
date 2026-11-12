@@ -530,3 +530,7 @@ main.rs-home { margin-top: 0; }
 body { min-height: 100vh; display: flex; flex-direction: column; }
 body > #main { width: 100%; flex: 1 0 auto; }
 .page__footer { flex-shrink: 0; margin-top: 3rem; }
+
+/* Fit each icon inside its navy frame in every browser */
+.rs-tile { position: relative; }
+.rs-tile .rs-tile__thumb { position: absolute; inset: 7px; width: auto; height: auto; aspect-ratio: auto; }

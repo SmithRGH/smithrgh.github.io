@@ -95,7 +95,7 @@ export function lineChart(canvas, series, opt) {
   const labelW = ctx.measureText(String(Math.round(xmax))).width + 14;
   const fit = Math.max(1, Math.floor((W - pad.l - pad.r) / labelW));
   let step = niceStep(xmax / Math.min(5, fit));
-  while (step > 0 && xmax / step > fit) step = niceStep(step * 1.6);
+  while (xmax / step > fit) step = nextNice(step);
   ctx.textAlign = 'center'; ctx.textBaseline = 'top';
   for (let x = 0; x <= xmax; x += step) { ctx.fillStyle = C.muted; ctx.fillText(String(x), X(x), H - pad.b + 8); }
   ctx.fillText(opt.xlabel, pad.l + (W - pad.l - pad.r) / 2, H - 16);
@@ -127,6 +127,8 @@ export function lineChart(canvas, series, opt) {
     canvas.addEventListener('pointerleave', () => { tip.hidden = true; });
   }
 }
+/* The next larger step in the 1, 2, 5, 10, 20, 50, ... sequence */
+function nextNice(s) { const e = 10 ** Math.floor(Math.log10(s) + 1e-9), m = Math.round(s / e); return (m < 2 ? 2 : m < 5 ? 5 : 10) * e; }
 function niceStep(x) { const e = 10 ** Math.floor(Math.log10(x)), m = x / e; return (m < 1.5 ? 1 : m < 3.5 ? 2 : m < 7.5 ? 5 : 10) * e; }
 
 export const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;

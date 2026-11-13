@@ -57,7 +57,7 @@ Both methods use the same 12 real shifts, log-spaced across the spectrum of $$A$
 
 <div class="rs-demo" data-demo="adi" markdown="0">
   <div class="rs-controls">
-    <label>Columns in \(B\) <input type="range" name="m" min="4" max="24" step="2" value="10"> <output data-m>10</output></label>
+    <label>Columns in \(B\) <input type="range" name="m" min="2" max="14" step="2" value="8"> <output data-m>8</output></label>
     <button type="button" class="rs-btn" data-new>New random \(B\) and \(R\)</button>
   </div>
   <div class="rs-panels rs-panels--wide">

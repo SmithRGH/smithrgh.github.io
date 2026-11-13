@@ -177,7 +177,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .rs-controls { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; margin: 0 0 1rem; }
 .rs-controls label { display: inline-flex; align-items: center; gap: .6rem; color: var(--rs-muted); }
 .rs-controls output, .rs-controls strong { color: var(--rs-ink); font-weight: 600; font-variant-numeric: tabular-nums; min-width: 2ch; }
-.rs-controls input[type=range] { width: 160px; accent-color: var(--rs-accent); }
+/* Sliders: drawn by the site instead of the browser, so the handle reaches both ends of the
+   track in every browser (Safari drew the track past the last position) */
+.rs-controls input[type=range] {
+  -webkit-appearance: none; appearance: none; width: 160px; height: 22px;
+  margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; cursor: pointer;
+}
+.rs-controls input[type=range]::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: var(--rs-rule); }
+.rs-controls input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 18px; height: 18px; margin-top: -6px;
+  border-radius: 50%; background: var(--rs-accent); border: 2px solid var(--rs-bg); box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+.rs-controls input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; background: var(--rs-rule); }
+.rs-controls input[type=range]::-moz-range-progress { height: 6px; border-radius: 3px; background: var(--rs-accent); }
+.rs-controls input[type=range]::-moz-range-thumb {
+  width: 14px; height: 14px; border-radius: 50%; background: var(--rs-accent); border: 2px solid var(--rs-bg); box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+.rs-controls input[type=range]:focus-visible { outline: 2px solid var(--rs-accent); outline-offset: 4px; }
 .rs-controls select { width: auto; margin: 0; padding: .3em .5em; font-family: var(--rs-sans); font-size: .9rem; background: var(--rs-surface); color: var(--rs-ink); border: 1px solid var(--rs-rule); border-radius: 6px; }
 .rs-panels { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .rs-panels--2 { grid-template-columns: 1fr 1fr; } }

@@ -45,6 +45,11 @@ var addressPoints = [
     -80.4136767
   ],
   [
+    "Efficient Sketching Based Summation of Tucker Tensors<br />SIAM Imaging Science (IS26); Salt Lake City, UT",
+    40.7596198,
+    -111.886797
+  ],
+  [
     "A Tangential Low-rank ADI Method for Solving Indefinite Lyapunov Equations<br />ICERM: Stochastic and Randomized Algorithms in Scientific Computing; Providence, RI",
     41.8239891,
     -71.4128343

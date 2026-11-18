@@ -5,7 +5,7 @@ var addressPoints = [
     -71.4128343
   ],
   [
-    "Title TBD<br />SIAM Applied Linear Algebra (SIAM LA); Long Beach, CA",
+    "Title TBD<br />SIAM Applied Linear Algebra (LA27); Long Beach, CA",
     33.7690164,
     -118.191604
   ],
@@ -35,7 +35,7 @@ var addressPoints = [
     -87.6244212
   ],
   [
-    "Randomized Techniques for Tucker GMRES<br />SIAM Mathematics of Data Science (SIAM MDS); Salt Lake City, UT",
+    "Randomized Techniques for Tucker GMRES<br />SIAM Mathematics of Data Science (MDS26); Salt Lake City, UT",
     40.7596198,
     -111.886797
   ],

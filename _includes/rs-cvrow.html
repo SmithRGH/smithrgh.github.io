@@ -3,7 +3,7 @@
   Usage: {% include rs-cvrow.html item=post %}
 {% endcomment %}
 {% assign i = include.item %}
-<div class="rs-cvrow"{% if i.date %} data-start="{{ i.date | date: '%Y-%m-%d' }}"{% endif %}>
+<div class="rs-cvrow"{% if i.date %} data-start="{{ i.date | date: '%Y-%m-%d' }}"{% assign rs_end = i.dates | split: "–" | last | strip | remove: "." %}{% if rs_end != "" %} data-end="{{ rs_end | date: '%Y-%m-%d' }}"{% endif %}{% endif %}>
   <p class="rs-cvrow__head">{{ i.heading | default: i.venue }}</p>
   <p class="rs-cvrow__date">{{ i.dates }}</p>
   <p class="rs-cvrow__detail">{% if i.role %}({{ i.role }}) {% endif %}{% if i.talk_title %}{% if i.talk_title == "Title TBD" %}Title TBD{% elsif i.paper %}<a href="{{ base_path }}{{ i.paper }}">‘{{ i.talk_title }}’</a>{% else %}‘{{ i.talk_title }}’{% endif %}{% endif %}{% if i.detail %}{{ i.detail }}{% endif %}</p>
